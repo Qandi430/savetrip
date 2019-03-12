@@ -1,0 +1,163 @@
+#wrap.info{
+    width: 100%;
+    height: calc(100vh - 40px);
+}
+
+.tripInfo .bgBox{
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+.tripInfo .bgBox a{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.2)
+}
+.tripInfo .bgBox a span{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+}
+#cover{
+    display: none;
+}
+.inputBox{
+    padding: 30px 0;
+}
+.inputBox > div{
+    padding: 0 10px;
+}
+
+.inputBox h3{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.inputBox .titleBox a{
+    display: block;
+}
+.inputBox .titleBox a.titleDummy{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+input[name=title]{
+    display: none;
+}
+.inputBox .countryBox a{
+    display: block;
+}
+.inputBox .countryBox a::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+.inputBox .countryBox a img{
+    display: block;
+    float: left;
+    max-width: 50px;
+}
+.inputBox .countryBox a span{
+    display: block;
+    float: left;
+    padding: 8px;
+    font-size: 1.2em;
+}
+.inputBox .dateBox > div+div{
+    margin-top: 5px;
+}
+.inputBox .dateBox input{
+    color: #aaa;
+}
+.inputBox .budgetBox h3 a{
+    float: right;
+    padding: 10px;
+}
+
+/*budget*/
+.budget{
+    text-align: center;
+}
+.budget .budgetList{
+    padding: 30px 0;
+}
+.budget .budgetList li{
+    padding: 20px;
+}
+.budget .budgetList li >div::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+.budget .budgetList li >div{
+    width: 100%;
+}
+.budget .budgetList li >div > div:first-child{
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+.budget .budgetList li >div > div:last-child{
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+.budget .budgetList li > div.progressive{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background: #f1f1f1;
+    position: relative;
+    margin: 5px 0;
+    overflow: hidden;
+}
+.budget .budgetList li > div.progressive .bar{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: left;
+    padding: 7px 10px;
+    color: #fff;
+}
+.budget .spend{
+    color: #999;
+}
+.budget .remain{
+    color: #ff7a7a;
+}
+
+.budget .addBudget{
+    padding: 10px 50px;
+    border: 1px solid #57a2ff;
+    border-radius: 8px;
+    color: #57a2ff;
+}
+.budget #addModal h5{
+    padding: 10px 0;
+}
+.budget #addModal .currency a{
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #aaa;
+}
+.budget #addModal .type ul li a{
+    display: block;
+    padding: 5px;
+    color: #aaa;
+    transition: all 0.5s;
+}
+.budget #addModal .type ul li.on a{
+    color: #333;
+}

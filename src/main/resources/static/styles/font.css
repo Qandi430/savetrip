@@ -1,0 +1,168 @@
+@font-face {
+  font-family: 'Gaegu';
+  src: url('../fonts/Gaegu-Light.eot');
+  src: url('../fonts/Gaegu-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gaegu-Light.svg#Gaegu-Light') format('svg'),
+       url('../fonts/Gaegu-Light.ttf') format('truetype'),
+       url('../fonts/Gaegu-Light.woff') format('woff'),
+       url('../fonts/Gaegu-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gaegu';
+  src: url('../fonts/Gaegu-Regular.eot');
+  src: url('../fonts/Gaegu-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gaegu-Regular.svg#Gaegu-Regular') format('svg'),
+       url('../fonts/Gaegu-Regular.ttf') format('truetype'),
+       url('../fonts/Gaegu-Regular.woff') format('woff'),
+       url('../fonts/Gaegu-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gaegu';
+  src: url('../fonts/Gaegu-Bold.eot');
+  src: url('../fonts/Gaegu-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gaegu-Bold.svg#Gaegu-Bold') format('svg'),
+       url('../fonts/Gaegu-Bold.ttf') format('truetype'),
+       url('../fonts/Gaegu-Bold.woff') format('woff'),
+       url('../fonts/Gaegu-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-Bold.eot');
+  src: url('../fonts/Mali-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-Bold.svg#Mali-Bold') format('svg'),
+       url('../fonts/Mali-Bold.ttf') format('truetype'),
+       url('../fonts/Mali-Bold.woff') format('woff'),
+       url('../fonts/Mali-Bold.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-BoldItalic.eot');
+  src: url('../fonts/Mali-BoldItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-BoldItalic.svg#Mali-Bold') format('svg'),
+       url('../fonts/Mali-BoldItalic.ttf') format('truetype'),
+       url('../fonts/Mali-BoldItalic.woff') format('woff'),
+       url('../fonts/Mali-BoldItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-SemiBold.eot');
+  src: url('../fonts/Mali-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-SemiBold.svg#Mali-SemiBold') format('svg'),
+       url('../fonts/Mali-SemiBold.ttf') format('truetype'),
+       url('../fonts/Mali-SemiBold.woff') format('woff'),
+       url('../fonts/Mali-SemiBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-SemiBoldItalic.eot');
+  src: url('../fonts/Mali-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-SemiBoldItalic.svg#Mali-Bold') format('svg'),
+       url('../fonts/Mali-SemiBoldItalic.ttf') format('truetype'),
+       url('../fonts/Mali-SemiBoldItalic.woff') format('woff'),
+       url('../fonts/Mali-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-Medium.eot');
+  src: url('../fonts/Mali-Medium.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-Medium.svg#Mali-Medium') format('svg'),
+       url('../fonts/Mali-Medium.ttf') format('truetype'),
+       url('../fonts/Mali-Medium.woff') format('woff'),
+       url('../fonts/Mali-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-MediumItalic.eot');
+  src: url('../fonts/Mali-MediumItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-MediumItalic.svg#Mali-Bold') format('svg'),
+       url('../fonts/Mali-MediumItalic.ttf') format('truetype'),
+       url('../fonts/Mali-MediumItalic.woff') format('woff'),
+       url('../fonts/Mali-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-Regular.eot');
+  src: url('../fonts/Mali-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-Regular.svg#Mali-Regular') format('svg'),
+       url('../fonts/Mali-Regular.ttf') format('truetype'),
+       url('../fonts/Mali-Regular.woff') format('woff'),
+       url('../fonts/Mali-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-Italic.eot');
+  src: url('../fonts/Mali-Italic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-Italic.svg#Mali-Bold') format('svg'),
+       url('../fonts/Mali-Italic.ttf') format('truetype'),
+       url('../fonts/Mali-Italic.woff') format('woff'),
+       url('../fonts/Mali-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-Light.eot');
+  src: url('../fonts/Mali-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-Light.svg#Mali-Light') format('svg'),
+       url('../fonts/Mali-Light.ttf') format('truetype'),
+       url('../fonts/Mali-Light.woff') format('woff'),
+       url('../fonts/Mali-Light.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-LightItalic.eot');
+  src: url('../fonts/Mali-LightItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-LightItalic.svg#Mali-Bold') format('svg'),
+       url('../fonts/Mali-LightItalic.ttf') format('truetype'),
+       url('../fonts/Mali-LightItalic.woff') format('woff'),
+       url('../fonts/Mali-LightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-ExtraLight.eot');
+  src: url('../fonts/Mali-ExtraLight.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-ExtraLight.svg#Mali-ExtraLight') format('svg'),
+       url('../fonts/Mali-ExtraLight.ttf') format('truetype'),
+       url('../fonts/Mali-ExtraLight.woff') format('woff'),
+       url('../fonts/Mali-ExtraLight.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mali';
+  src: url('../fonts/Mali-ExtraLightItalic.eot');
+  src: url('../fonts/Mali-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Mali-ExtraLightItalic.svg#Mali-Bold') format('svg'),
+       url('../fonts/Mali-ExtraLightItalic.ttf') format('truetype'),
+       url('../fonts/Mali-ExtraLightItalic.woff') format('woff'),
+       url('../fonts/Mali-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+}
+
+

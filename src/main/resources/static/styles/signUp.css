@@ -1,0 +1,182 @@
+#wrap.signUp{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c2e59c+0,64b3f4+100 */
+    background: #c2e59c; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #c2e59c 0%, #64b3f4 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #c2e59c 0%,#64b3f4 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #c2e59c 0%,#64b3f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2e59c', endColorstr='#64b3f4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    padding-top: 50px;
+}
+#wrap.signUp .pageTitle{
+    padding: 50px 0;
+    text-align: center;
+    font-size: 2.4em; 
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #fa571e;
+}
+#wrap.signUp .formBox{
+    background: rgba(255,255,255,0.8);
+    padding: 50px 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: 60%;
+    transform: translate(0 ,-50%);
+    width: calc(100% - 30px);
+    left: 15px;
+}
+#wrap.signUp .formBox .form-group+.form-group{
+    margin-top: 15px;
+}
+#wrap.signUp .formBox input{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(250,87,30,0.5);
+    border-radius: 100px;
+    padding: 0 10px;
+    background: rgba(255,255,255,0.5);
+}
+#wrap.signUp .formBox .form-group.gender-group > div{
+    border: 1px solid #d9d9d9;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    width: 48%;
+    transition: all 0.5s;
+    border-radius: 20px;
+}
+#wrap.signUp .formBox .form-group.gender-group > div.on{
+    background: #fa571e;
+    color: #fff;
+}
+#wrap.signUp .formBox .form-group.gender-group input{
+    display: none;
+}
+
+svg {
+    width: 70%;
+    border-radius: 50%;
+    background: #fff;
+    margin-bottom: 40px;
+    align-self: center;
+    transform-style: preserve-3d;
+    margin: auto;
+    display: block;
+}
+
+input {
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+    padding: 10px 15px;
+    margin-top: 15px;
+}
+
+@keyframes lookaway-up {
+    from {
+        transform: rotate3d(.2, 0, -.01, 20deg);
+    }
+
+    to {
+        transform: rotate3d(.2, -.05, -.01, 20deg);
+    }
+}
+
+@keyframes lookaway-down {
+    0% {
+        transform: rotate3d(-.2, 0, -.01, 20deg);
+    }
+
+    100% {
+        transform: rotate3d(-.2, -.05, .01, 20deg);
+    }
+}
+
+.ears {
+    transform-origin: 50% 50% 5px;
+}
+
+.eyes {
+    transform-origin: 50% 50% -40px;
+}
+
+.muzzle {
+    transform-origin: 50% 50% -44px;
+}
+
+.ears, .eyes, .muzzle {
+    transition: transform .5s;
+}
+
+.focused {
+    transition: transform .1s;
+}
+
+.look-away .ears,
+.look-away .eyes,
+.look-away .muzzle {
+    transition-duration: .3s;
+    animation: 3s infinite alternate;
+}
+
+.look-away.up .ears,
+.look-away.up .eyes,
+.look-away.up .muzzle {
+    transform: rotate3d(.2, 0, 0, 20deg) !important;
+}
+
+.look-away.down .ears,
+.look-away.down .eyes,
+.look-away.down .muzzle {
+    transform: rotate3d(-.2, 0, 0, 20deg) !important;    
+}
+
+.look-away.playing.up .ears,
+.look-away.playing.up .eyes,
+.look-away.playing.up .muzzle {
+    animation-name: lookaway-up;
+}
+
+.look-away.playing.down .ears,
+.look-away.playing.down .eyes,
+.look-away.playing.down .muzzle {
+    animation-name: lookaway-down;
+}
+
+#wrap.signUp .btnSubmit{
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #fa571e;
+    background: #fa571e;
+    color: #fff;
+}
+#wrap.signUp .btnBack{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    animation: btnBack 1s infinite alternate;
+}
+#wrap.signUp .btnBack i{
+    font-size: 2em;
+}
+@keyframes btnBack{
+    from{
+        transform: translate(-5px,0);
+    }
+    to{
+        transform: translate(5px,0);
+    }
+}

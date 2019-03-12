@@ -1,0 +1,203 @@
+/* .background{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: url(../img/spring-japan.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center,center;
+    filter: blur(5px);
+    z-index: -1;
+} */
+
+/*card 공통*/
+
+#wrap.main .cardWrap::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+#wrap.main .cardWrap .card{
+    transition: all 0.5s;
+}
+
+#wrap.main .cardWrap .card a > div.imgBox img{
+    margin-top: 10px;
+    max-height: 30px;
+    border-radius: 5px;
+}
+#wrap.main .card::after{
+    position: absolute;
+    content:'';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+    z-index: 5;
+    border-bottom: 2px solid #d9d9d9;
+
+}
+#wrap.main  .card a{
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    height: 100%;
+}
+#wrap.main .card a::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+#wrap.main .card a > div.textBox ul li{
+    color: #fff;
+    text-align: right;
+}
+#wrap.main .card a > div.textBox ul li:last-child{
+    margin-top:20px;
+    padding-top: 5px;
+    border-top: 1px solid #fff;
+}
+#wrap.main .card a h5{
+    font-size: 1.6em;
+    color: #fff;
+}
+#wrap.main .card a p{
+    color: #fff;
+}
+#wrap.main .card a.new{
+    text-align: center;
+}
+#wrap.main .card a.new i{
+    font-size: 1.4em;
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+}
+
+/*card large*/
+
+#wrap.main .cardWrap.large .card{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 30px 30px;
+    height: 400px;
+    width: 100%;
+    float: left;
+}
+#wrap.main .cardWrap.large .card a > div.imgBox{
+    width: 100%;
+    float: left;
+}
+#wrap.main .cardWrap.large .card a > div.imgBox img{
+    margin-top: 50px;
+    max-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+#wrap.main .cardWrap.large .card a > div.textBox{
+    width: 100%;
+    float: right;
+    margin-top: 50px;
+}
+/*card quator*/
+#wrap.main .cardWrap.quator .card{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 30px 30px;
+    height: 145px;
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+#wrap.main .cardWrap.quator .card a > div.imgBox{
+    width: 100%;
+    float: left;
+}
+#wrap.main .cardWrap.quator .card a > div.textBox{
+    display: none;
+}
+#wrap.main .cardWrap.quator .card a > div.imgBox img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*card list*/
+#wrap.main .cardWrap.list .card{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 30px 30px;
+    height: 145px;
+    width: 100%;
+    float: left;
+}
+#wrap.main .cardWrap.list .card a > div.imgBox{
+    width: 50%;
+    float: left;
+}
+#wrap.main .cardWrap.list .card a > div.textBox{
+    width: 48%;
+    float: right;
+}
+
+/*sort 버튼*/
+.sortBtn ul::after{
+    content: ''; 
+    display: block;
+    clear: both;
+}
+.sortBtn ul li{
+    display: block;
+    float: left;
+    width: 25%;
+    transition: all 0.5s;
+}
+.sortBtn ul li.searchBox{
+    width: 0;
+}
+.sortBtn ul li.on{
+    background: #FF7521;
+    box-shadow: 5px 0px 20px rgba(0,0,0,0.3);
+}
+.sortBtn ul li.on a{
+    color: #fff;
+    
+}
+.sortBtn ul li a{
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    border-right: 1px solid #d9d9d9;
+}
+.sortBtn ul li:last-child a{
+    border-right: 0;
+}
+
+.addTrip{
+    display: block;
+    width: 200px;
+    position: fixed;
+    bottom: 30px;
+    background: rgba(200,235,250,0.5);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    z-index: 99;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+

@@ -1,0 +1,25 @@
+<div id="wrap" class="login">
+    <h1 class="logo">
+        SAVE TRIP
+    </h1>
+    <div class="container">
+        <div class="formBox">
+            <form action="/login" method="POST" id="loginForm">
+                <input type="text" name="username" id="email" placeholder="이메일을 입력해주세요">
+                <input type="password" name="password" id="password" placeholder="비밀번호를 입력해주세요">
+            </form>
+            <a href="#" class="loginBtn">로그인</a>
+            <div class="cutLine">
+                <span>또는</span>
+            </div>
+            <a href="#" class="findPass">비밀번호를 잊으셨나요? <span>비밀번호 찾기</span></a>
+        </div>
+    </div>
+    <a href="signUp.html" class="signUpBtn">가입하기</a>
+</div>
+<script>
+    $(".formBox .loginBtn").click(function(e){
+        e.preventDefault();
+        $("#loginForm").submit();
+    })
+</script>

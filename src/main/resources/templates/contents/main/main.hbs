@@ -1,0 +1,71 @@
+<div id="wrap" class="main">
+    <div class="container">
+        <div class="sortBtn">
+            <ul>
+                <li class="large on"><a href="#"><i class="far fa-square"></i></a></li>
+                <li class="quator"><a href="#"><i class="fas fa-th-large"></i></i></a></li>
+                <li class="list"><a href="#"><i class="fas fa-list-ul"></i></a></li>
+                <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
+            </ul>
+        </div>
+        <div class="cardWrap large">
+            <div class="card" style="background-image: url(/images/creta.jpg);">
+                <a href="#">
+                    <div class="imgBox">
+                        <h5>그리스 여행</h5>
+                        <p>2019.01.12~2019.01.31</p>
+                        <img src="/images/flags/gr.png" alt="" class="img-responsive">
+                    </div>
+                    <div class="textBox">
+                        <ul>
+                            <li>예상지출 : 1000000원</li>
+                            <li>총지출 : 1200000원</li>
+                            <li>총계 : -200000원</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card" style="background-image: url(/images/chile.jpg);">
+                <a href="#">
+                    <div class="imgBox">
+                        <h5>칠레칠레</h5>
+                        <p>2019.01.12~2019.01.31</p>
+                        <img src="/images/flags/cl.png" alt="" class="img-responsive">
+                    </div>
+                    <div class="textBox">
+                        <ul>
+                            <li>예상지출 : 1000000원</li>
+                            <li>총지출 : 1200000원</li>
+                            <li>총계 : -200000원</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <a href="addTrip.html" class="addTrip">여행 추가하기</a>
+</div>
+<script>
+    $(".sortBtn  li").click(function(){
+        var tg = $(this);
+        var tc = tg[0].className;
+        $(".sortBtn  li").removeClass("on");
+        $(".cardWrap").removeClass("large quator list")
+        tg.addClass("on")
+        switch(tc){
+            case "large":
+                $(".cardWrap").addClass("large")
+                break;
+            case "quator":
+                $(".cardWrap").addClass("quator")
+                break;
+            case "list":
+                $(".cardWrap").addClass("list")
+                break;
+            default :
+                return false;
+                break;
+        }
+    })
+</script>
