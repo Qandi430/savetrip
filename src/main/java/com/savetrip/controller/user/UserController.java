@@ -5,6 +5,7 @@ import com.savetrip.DTO.user.UserDTO;
 import com.savetrip.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.tags.Param;
 
@@ -23,7 +24,10 @@ public class UserController {
     }
 
     @RequestMapping(value="/signUp",method = RequestMethod.GET)
-    public String signUp(){return "layout/user/signUp";}
+    public String signUp(Model model){
+        model.addAttribute("userList",userDAO.readAllUser());
+        return "layout/user/signUp";
+    }
 
     @RequestMapping(value="/signUp",method = RequestMethod.POST)
     public String signUpProcess(UserDTO user){

@@ -49,8 +49,8 @@
         )
     </insert>
 
-    <select id="readAllUser" resultMap="user">
-        SELECT *
+    <select id="readAllUser" resultType="String">
+        SELECT user_email
         FROM user
     </select>
 </mapper>

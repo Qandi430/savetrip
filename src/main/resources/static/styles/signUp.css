@@ -31,9 +31,7 @@
     width: calc(100% - 30px);
     left: 15px;
 }
-#wrap.signUp .formBox .form-group+.form-group{
-    margin-top: 15px;
-}
+
 #wrap.signUp .formBox input{
     display: block;
     width: 100%;
@@ -42,6 +40,7 @@
     border-radius: 100px;
     padding: 0 10px;
     background: rgba(255,255,255,0.5);
+    margin: 0;
 }
 #wrap.signUp .formBox .form-group.gender-group > div{
     border: 1px solid #d9d9d9;
@@ -179,4 +178,9 @@ input {
     to{
         transform: translate(5px,0);
     }
+}
+
+.form-group p{
+    min-height: 35px;
+    padding: 10px;
 }
