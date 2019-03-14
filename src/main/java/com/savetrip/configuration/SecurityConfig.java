@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         //제외
-        web.ignoring().antMatchers("/styles/**","/js/**","/plugins/**","/images/**");
+        web.ignoring().antMatchers("/styles/**","/js/**","/plugins/**","/images/**","/fonts/**");
     }
 
     @Override
@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
             .authorizeRequests()
-                    .antMatchers("/login","/login-error").permitAll()
+                    .antMatchers("/login","/login-error","/signUp").permitAll()
                     .anyRequest()
                     .authenticated()
                     .and()

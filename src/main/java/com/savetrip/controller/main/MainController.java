@@ -1,4 +1,4 @@
-package com.savetrip.controller;
+package com.savetrip.controller.main;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,12 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 public class MainController {
     @RequestMapping("/")
     public static String main(){
-        return "layout/main";
+        return "layout/main/main";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public String loginByGet(){
-        return "layout/login";
-    }
 
 }

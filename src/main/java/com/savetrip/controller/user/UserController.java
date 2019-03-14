@@ -6,6 +6,7 @@ import com.savetrip.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.tags.Param;
 
 @Controller
 public class UserController {
@@ -15,6 +16,21 @@ public class UserController {
 
     @Autowired
     UserDAO userDAO;
+
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    public String loginByGet(){
+        return "layout/user/login";
+    }
+
+    @RequestMapping(value="/signUp",method = RequestMethod.GET)
+    public String signUp(){return "layout/user/signUp";}
+
+    @RequestMapping(value="/signUp",method = RequestMethod.POST)
+    public String signUpProcess(UserDTO user){
+        userService.save(user,"USER");
+        return "layout/user/login";
+    }
+
 //
 //    @GetMapping("/create")
 //    public UserDTO create(){
