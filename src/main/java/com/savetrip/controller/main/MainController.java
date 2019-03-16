@@ -13,6 +13,4 @@ public class MainController {
     public static String main(){
         return "layout/main/main";
     }
-
-
 }

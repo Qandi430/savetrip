@@ -11,7 +11,14 @@
     filter: blur(5px);
     z-index: -1;
 } */
-
+#wrap.main .tripCount{
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px 0;
+}
+#wrap.main .tripCount span{
+    color: #FF7521;
+}
 /*card 공통*/
 
 #wrap.main .cardWrap::after{
