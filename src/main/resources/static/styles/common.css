@@ -574,17 +574,19 @@ header a.back{
 }
 
 #selCountry{
-  position: fixed;
+  position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  height: 100%;
   background: #fff;
   padding: 70px 10px;
   transition: all 0.5s;
+  z-index: 99;
+  display: none;
 }
 #selCountry.on{
   top:0;
+  display: block;
 }
 #selCountry .searchBox{
   position: relative;

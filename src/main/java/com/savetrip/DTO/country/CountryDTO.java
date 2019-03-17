@@ -4,9 +4,14 @@ import lombok.Data;
 
 @Data
 public class CountryDTO {
-    private char ccode;
+    private String ccode;
     private String kor;
     private String eng;
     private double exchange;
     private String unit;
+
+    public String getCcode(){
+        return ccode.toLowerCase();
+    }
+
 }

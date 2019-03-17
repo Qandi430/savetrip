@@ -1,0 +1,51 @@
+<div id="selCountry">
+    <div class="container">
+        <div class="sellCountry">
+            <div class="searchBox">
+                <form action="">
+                    <input type="text" name="search" id="search" placeholder="국가명 또는 국가 코드">
+                    <a href="#" class="cancle btn"><i class="fas fa-times"></i></a>
+                    <a href="#" class="cancle text">취소</a>
+                </form>
+            </div>
+            <div class="selBox">
+                <ul>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="selBtn">선택 완료</a>
+</div>
+<script>
+
+    $(function () {
+        countryList();
+    })
+
+    function countryList() {
+        let html = ``;
+        $.ajax({
+            url:"/countryList",
+            success:function (data) {
+                for(let d of data){
+                    html += `
+                        <li>
+                        <div class="flagBox">
+                            <img src="/images/flags/${d.ccode}.png" alt=""class="img-responsive">
+                        </div>
+                        <h5>${d.kor}</h5>
+                        <div class="customBox">
+                            <div class="custom_btn one">
+                                <div class="check"></div>
+                            </div>
+                        </div>
+                        <input type="radio" name="country" id="country" value="${d.ccode}">
+                    </li>
+                    `
+                }
+                $(".selBox ul").html(html);
+            }
+        })
+    }
+</script>

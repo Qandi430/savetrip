@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.savetrip.DAO.visit.VisitDAO">
+    <resultMap id="visit" type="com.savetrip.DTO.visit.VisitDTO">
+        <result column="visit_no" property="visitNo" />
+        <result column="user_no" property="userNo" />
+        <result column="ccode" property="ccode" />
+        <result column="visit_title" property="visitTitle" />
+        <result column="visit_s_date" property="visitSDate"/>
+        <result column="visit_e_date" property="visitEDate" />
+    </resultMap>
+
+    <select id="tripList" parameterType="int" resultMap="visit">
+          SELECT *
+          FROM visit
+          WHERE user_no = #{userNo};
+    </select>
+
+</mapper>

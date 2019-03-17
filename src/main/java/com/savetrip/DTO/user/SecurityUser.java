@@ -12,6 +12,7 @@ public class SecurityUser extends User {
         super(member.getUserEmail(), member.getPassword(), member.getAuthorities());
     }
 
+
     public String getIp() {
         return ip;
     }

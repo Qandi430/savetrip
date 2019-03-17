@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.savetrip.DAO.main.MainDAO">
+    <resultMap id="user" type="com.savetrip.DTO.user.UserDTO">
+        <result column="user_no" property="userNo"/>
+        <result column="user_email" property="userEmail"/>
+        <result column="user_password" property="userPassword"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_gender" property="userGender"/>
+    </resultMap>
+    <select id="findUserByEmail" parameterType="String" resultMap="user">
+        SELECT user_no, user_name, user_email, user_gender
+        FROM user
+        WHERE user_email = #{userEmail}
+    </select>
+</mapper>

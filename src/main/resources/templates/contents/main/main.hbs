@@ -9,46 +9,32 @@
             </ul>
         </div>
         <h2 class="tripCount">
-            지금까지 <span class="count">0</span>개 나라를 여행 하였습니다.
+            지금까지 <span class="count">{{countTrip}}</span>개 나라를 여행 하였습니다.
         </h2>
         <div class="cardWrap large">
-            <div class="card" style="background-image: url(/images/creta.jpg);">
-                <a href="#">
-                    <div class="imgBox">
-                        <h5>그리스 여행</h5>
-                        <p>2019.01.12~2019.01.31</p>
-                        <img src="/images/flags/gr.png" alt="" class="img-responsive">
-                    </div>
-                    <div class="textBox">
-                        <ul>
-                            <li>예상지출 : 1000000원</li>
-                            <li>총지출 : 1200000원</li>
-                            <li>총계 : -200000원</li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card" style="background-image: url(/images/chile.jpg);">
-                <a href="#">
-                    <div class="imgBox">
-                        <h5>칠레칠레</h5>
-                        <p>2019.01.12~2019.01.31</p>
-                        <img src="/images/flags/cl.png" alt="" class="img-responsive">
-                    </div>
-                    <div class="textBox">
-                        <ul>
-                            <li>예상지출 : 1000000원</li>
-                            <li>총지출 : 1200000원</li>
-                            <li>총계 : -200000원</li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
+            {{#each tripList}}
+                <div class="card" style="background-image: url(/images/creta.jpg);">
+                    <a href="#">
+                        <div class="imgBox">
+                            <h5>{{visitTitle}}</h5>
+                            <p>{{visitSDate}}~{{visitEDate}}</p>
+                            <img src="/images/flags/{{ccode}}.png" alt="" class="img-responsive">
+                        </div>
+                        <div class="textBox">
+                            <ul>
+                                <li>예산 : 1000000원</li>
+                                <li>지출 : 1200000원</li>
+                                <li>총계 : -200000원</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
         </div>
     </div>
-    <a href="addTrip.html" class="addTrip">여행 추가하기</a>
+    <a href="#" data-event="selCountry" class="addTrip">여행 추가하기</a>
 </div>
+{{>contents/etc/selCountry}}
 <script>
     $(".sortBtn  li").click(function(){
         var tg = $(this);
@@ -71,4 +57,6 @@
                 break;
         }
     })
+
+
 </script>
