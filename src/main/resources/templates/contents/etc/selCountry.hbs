@@ -10,12 +10,16 @@
             </div>
             <div class="selBox">
                 <ul>
-                    
+
                 </ul>
             </div>
         </div>
     </div>
-    <a href="#" class="selBtn">선택 완료</a>
+    <div class="btnBox">
+        <a href="#" class="selBtn">선택 완료</a>
+        <a href="#" class="closeBtn">취소</a>
+    </div>
+
 </div>
 <script>
 
@@ -30,9 +34,9 @@
             success:function (data) {
                 for(let d of data){
                     html += `
-                        <li>
+                        <li data-ccode="${d.ccode}" onclick="selList()">
                         <div class="flagBox">
-                            <img src="/images/flags/${d.ccode}.png" alt=""class="img-responsive">
+                            <img src="/images/flags/${d.ccode}.png" onerror="this.src='/images/flags/noImageFlag.gif';" alt=""class="img-responsive">
                         </div>
                         <h5>${d.kor}</h5>
                         <div class="customBox">
@@ -45,7 +49,60 @@
                     `
                 }
                 $(".selBox ul").html(html);
+
+                $(".selBox ul li").click(function(){
+                    let ck = $(this).find("input")
+                    let input = $("input[name='ccode']")
+                    if($(this).hasClass("on")){
+                        ck.prop('checked', false);
+                        $(".selBox ul li").removeClass("on")
+                        input.val("");
+                    }else{
+                        $(".selBox ul li").removeClass("on")
+                        ck.prop('checked', true)
+                        $(this).addClass("on")
+                        unCheckCustomBtn("green");
+                        checkCustomBtn( $(this).find(".custom_btn"),"green");
+                        input.val($(this).data("ccode"))
+                    }
+                })
+
             }
         })
     }
+
+    /*sellCountry*/
+    $("[data-event=selCountry]").click(function(){
+        $("#selCountry").addClass("on");
+    })
+
+    $("#selCountry .btnBox .closeBtn").click(function(){
+        $("#selCountry").removeClass("on");
+    })
+
+    $(".selBox ul li").click(function(){
+        let ck = $(this).find("input")
+        if($(this).hasClass("on")){
+            ck.prop('checked', false);
+            $(".selBox ul li").removeClass("on")
+        }else{
+            $(".selBox ul li").removeClass("on")
+            ck.prop('checked', true)
+            $(this).addClass("on")
+            unCheckCustomBtn("green");
+            checkCustomBtn( $(this).find(".custom_btn"),"green");
+        }
+    })
+
+    function unCheckCustomBtn(colorName){
+        $(".check").css("transform", "scale(0)");
+        $(".custom_btn").removeClass(colorName);
+    }
+    function checkCustomBtn(target,colorName){
+        $(target).addClass(colorName);
+        $(target).children().css("transform", "scale(1)");
+    }
+
+
+
 </script>

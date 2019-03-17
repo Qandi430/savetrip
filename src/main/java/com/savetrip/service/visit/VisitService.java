@@ -14,4 +14,5 @@ public class VisitService {
     VisitDAO visitDAO;
 
     public List<VisitDTO> tripList(int userNo){return visitDAO.tripList(userNo);}
+    public int createVisit(VisitDTO visitDTO){return visitDAO.createVisit(visitDTO);}
 }

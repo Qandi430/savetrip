@@ -30,6 +30,7 @@ public class MainController {
         session.setAttribute("user", user);
         List<VisitDTO> tripList = visitService.tripList(user.getUserNo());
         int countTrip = tripList.size();
+        model.addAttribute("userNo",user.getUserNo());
         model.addAttribute("countTrip",countTrip);
         model.addAttribute("tripList",tripList);
         return "layout/main/main";

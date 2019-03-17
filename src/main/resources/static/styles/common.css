@@ -579,14 +579,15 @@ header a.back{
   left: 0;
   width: 100%;
   background: #fff;
-  padding: 70px 10px;
+  overflow: hidden;
   transition: all 0.5s;
   z-index: 99;
-  display: none;
+  height: 0;
 }
 #selCountry.on{
   top:0;
-  display: block;
+  height: auto;
+  padding: 70px 10px;
 }
 #selCountry .searchBox{
   position: relative;
@@ -672,16 +673,29 @@ header a.back{
 .selBox ul li input{
   display: none;
 }
-.selBtn{
-  position: absolute;
+#selCountry .btnBox{
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  display: none;
+}
+#selCountry.on .btnBox{
+  display: block;
+}
+#selCountry .btnBox a{
   padding: 10px 0;
   text-align: center;
   display: block;
   background: #C8EBFA;
   font-size: 1.2em;
+  width: 50%;
+  float: left;
+}
+#selCountry .btnBox a.closeBtn{
+  background:#ff7a7a;
+  color: #fff;
+
 }
 body.openExpense #wrap{
   filter: blur(5px);

@@ -17,27 +17,14 @@ $(document).ready(function(){
             $(target).animate({"opacity":"1"},500)
         },500);
     });
+
+
+
     $("#modal .cancle").click(function(){
         closeModal();
     });
 
-    /*sellCountry*/
-    $("[data-event=selCountry]").click(function(){
-        $("#selCountry").addClass("on");
-    })
-    $(".selBox ul li").click(function(){
-        var ck = $(this).find("input")
-        if($(this).hasClass("on")){
-            ck.prop('checked', false);
-            $(".selBox ul li").removeClass("on")
-        }else{
-            $(".selBox ul li").removeClass("on")
-            ck.prop('checked', true)
-            $(this).addClass("on")
-            unCheckCustomBtn("green");
-            checkCustomBtn( $(this).find(".custom_btn"),"green");
-        }            
-    })
+
 
     /**addExpensse */
     $(".infoNav ul li.add").click(function(e){
@@ -83,12 +70,3 @@ function closeModal(){
 //         checkCustomBtn(e.currentTarget,colorName);
 //     })
 // };
-function unCheckCustomBtn(colorName){
-    $(".check").css("transform", "scale(0)");
-    $(".custom_btn").removeClass(colorName);
-}
-function checkCustomBtn(target,colorName){
-    $(target).addClass(colorName);
-    $(target).children().css("transform", "scale(1)");
-} 
-

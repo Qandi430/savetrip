@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface VisitDAO {
     public List<VisitDTO> tripList(int userNo);
+    public int createVisit(VisitDTO visitDTO);
 }

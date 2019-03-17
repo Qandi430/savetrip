@@ -16,4 +16,13 @@
           WHERE user_no = #{userNo};
     </select>
 
+    <insert id="createVisit" parameterType="com.savetrip.DTO.visit.VisitDTO">
+        INSERT visit (
+            user_no,
+            ccode,
+        ) VALUE (
+            #{userNo},
+            #{ccode}
+        )
+    </insert>
 </mapper>

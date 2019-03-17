@@ -1,0 +1,186 @@
+<header>
+    <a href="main.html" class="back"><i class="fas fa-home"></i></a>
+    <a href="#" class="logo">
+        SAVE <span>TRIP</span>
+    </a>
+</header>
+<div id="wrap" class="info tripInfo">
+    <div class="container">
+        <form action="">
+            <div class="bgBox" style="background-image:url(/images/vietnam.jpg);">
+                <a href="#"><span>커버사진 변경</span></a>
+                <input type="file" name="cover" id="cover" accept=".jpg, .png, .jpeg">
+            </div>
+            <div class="inputBox">
+                <div class="titleBox">
+                    <a href="#" class="titleDummy" data-event="modal" data-target="#titleModal">여행제목</a>
+                    <input type="hidden" name="visit_title" id="visit_title">
+                    <a href="#" class="contentDummy" data-event="modal" data-target="#contentModal">여행에대한 간단한 메모를 입력해 주세요</a>
+                    <textarea name="visit_content" id="visit_content" cols="30" rows="10" style="display: none;"></textarea>
+                </div>
+                <div class="countryBox">
+                    <h3>여행 국가</h3>
+                    <a href="#" data-event="selCountry"><img src="img/flags/kr.png" alt="" class="img-responsive"><span>한국</span></a>
+                </div>
+                <div class="dateBox">
+                    <h3>여행 날짜</h3>
+                    <div class="start">
+                        <label for="sDate">출발일</label>
+                        <input type="text" name="sDate" id="sDate" placeholder="시작일 입력하기">
+                    </div>
+                    <div class="end">
+                        <label for="eDate">도착일</label>
+                        <input type="text" name="eDate" id="eDate" placeholder="종료일 입력하기">
+                    </div>
+                </div>
+                <div class="budgetBox">
+                    <h3>화폐 &amp; 예산 <a href="#">편집하기</a></h3>
+                    <div class="budgetList">
+                        <span>KRW</span>,
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <a href="#" class="delTrip">여행 삭제하기</a>
+    <nav class="infoNav">
+        <ul>
+            <li class="on tripInfo"><a href="#"><i class="fas fa-plane"></i></a></li>
+            <li class="budget"><a href="budget.html"><i class="fas fa-wallet"></i></a></li>
+            <li class="add"><a href="#"><i class="fas fa-plus"></i></a></li>
+            <li class="list"><a href="#"><i class="fas fa-clipboard-list"></i></a></li>
+            <li class="graph"><a href="#"><i class="fas fa-chart-pie"></i></a></li>
+        </ul>
+    </nav>
+    <div id="modal">
+        <div id="titleModal" class="modalInner">
+            <div class="modalHeader">
+                <h5>여행 제목을 입력해 주세요.</h5>
+            </div>
+            <div class="modalBody">
+                <input type="text" id="title">
+            </div>
+            <div class="modalFooter">
+                <a href="#" class="cancle">취소</a>
+                <a href="#" class="confirm">완료</a>
+            </div>
+        </div>
+        <div id="contentModal" class="modalInner">
+            <div class="modalHeader">
+                <h5>여행에 대해 간단히 메모해 보세요</h5>
+            </div>
+            <div class="modalBody">
+                <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            </div>
+            <div class="modalFooter">
+                <a href="#" class="cancle">취소</a>
+                <a href="#" class="confirm">완료</a>
+            </div>
+        </div>
+    </div>
+    <div id="selCountry">
+        <div class="container">
+            <div class="sellCountry">
+                <div class="searchBox">
+                    <form action="">
+                        <input type="text" name="search" id="search" placeholder="국가명 또는 국가 코드">
+                        <a href="#" class="cancle btn"><i class="fas fa-times"></i></a>
+                        <a href="#" class="cancle text">취소</a>
+                    </form>
+                </div>
+                <div class="selBox">
+                    <ul>
+                        <li>
+                            <div class="flagBox">
+                                <img src="img/flags/kr.png" alt=""class="img-responsive">
+                            </div>
+                            <h5>대한민국</h5>
+                            <div class="customBox">
+                                <div class="custom_btn one">
+                                    <div class="check"></div>
+                                </div>
+                            </div>
+                            <input type="radio" name="country" id="country" value="ko-kr">
+                        </li>
+                        <li>
+                            <div class="flagBox">
+                                <img src="img/flags/kr.png" alt=""class="img-responsive">
+                            </div>
+                            <h5>대한민국</h5>
+                            <div class="customBox">
+                                <div class="custom_btn one">
+                                    <div class="check"></div>
+                                </div>
+                            </div>
+                            <input type="radio" name="country" id="country" value="ko-kr">
+                        </li>
+                        <li>
+                            <div class="flagBox">
+                                <img src="img/flags/kr.png" alt=""class="img-responsive">
+                            </div>
+                            <h5>대한민국</h5>
+                            <div class="customBox">
+                                <div class="custom_btn one">
+                                    <div class="check"></div>
+                                </div>
+                            </div>
+                            <input type="radio" name="country" id="country" value="ko-kr">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="tripInfo.html" class="selBtn">선택 완료</a>
+    </div>
+</div>
+
+<script>
+    $("#titleModal .confirm").click(function(){
+        if($("#title").val() != ""){
+            $(".titleDummy").text($("#title").val());
+            $("#visit_title").val($("#title").val());
+        }
+        closeModal();
+    });
+    $("#contentModal .confirm").click(function(){
+        if($("#content").val() != ""){
+            $(".contentDummy").text($("#content").val());
+            $("#visit_content").val($("#content").val());
+        }
+        closeModal();
+    });
+    $('#eDate').bootstrapMaterialDatePicker({
+        weekStart: 0,
+        format: 'YYYY-MM-DD',
+        time: false,
+    });
+    $('#sDate').bootstrapMaterialDatePicker({
+        weekStart: 0,
+        format: 'YYYY-MM-DD',
+        shortTime : true,
+        time: false,
+    }).on('change', function(e, date){
+        $('#eDate').bootstrapMaterialDatePicker('setMinDate', date);
+    });
+
+    $(".bgBox a").click(function(e){
+        e.preventDefault();
+        $("#cover").click();
+    })
+    $(function() {
+        $("#cover").on('change', function(){
+            readURL(this);
+        });
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.bgBox').css('background-image', 'url(' + e.target.result + ')');
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

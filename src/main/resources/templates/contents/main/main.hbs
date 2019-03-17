@@ -33,6 +33,10 @@
         </div>
     </div>
     <a href="#" data-event="selCountry" class="addTrip">여행 추가하기</a>
+    <form method="POST" id="createVisit" action="/createVisit">
+        <input type="hidden" name="ccode"/>
+        <input type="hidden" name="userNo" value="{{userNo}}"/>
+    </form>
 </div>
 {{>contents/etc/selCountry}}
 <script>
@@ -56,6 +60,14 @@
                 return false;
                 break;
         }
+    })
+
+    $("#selCountry .btnBox .selBtn").click(function(){
+        if($("intput[name='ccode']").val()==""){
+            alert("국가를 선택해주세요");
+            return;
+        }
+        $("#createVisit").submit();
     })
 
 
