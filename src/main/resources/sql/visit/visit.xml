@@ -17,10 +17,10 @@
     </select>
 
     <insert id="createVisit" parameterType="com.savetrip.DTO.visit.VisitDTO">
-        INSERT visit (
+        INSERT INTO visit (
             user_no,
-            ccode,
-        ) VALUE (
+            ccode
+        ) VALUES (
             #{userNo},
             #{ccode}
         )

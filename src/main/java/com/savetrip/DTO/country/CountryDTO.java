@@ -9,9 +9,4 @@ public class CountryDTO {
     private String eng;
     private double exchange;
     private String unit;
-
-    public String getCcode(){
-        return ccode.toLowerCase();
-    }
-
 }

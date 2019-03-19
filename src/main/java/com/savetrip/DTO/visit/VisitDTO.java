@@ -25,7 +25,4 @@ public class VisitDTO {
         return sdf.format(visitEDate);
     }
 
-    public String getCcode(){
-        return ccode.toLowerCase();
-    }
 }
