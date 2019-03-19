@@ -8,15 +8,16 @@
         <result column="visit_title" property="visitTitle" />
         <result column="visit_s_date" property="visitSDate"/>
         <result column="visit_e_date" property="visitEDate" />
+        <association property="country" column="ccode" javaType="com.savetrip.DTO.country.CountryDTO" select="selectCountry" />
     </resultMap>
 
     <select id="tripList" parameterType="int" resultMap="visit">
           SELECT *
           FROM visit
-          WHERE user_no = #{userNo};
+          WHERE user_no = #{userNo}
     </select>
 
-    <insert id="createVisit" parameterType="com.savetrip.DTO.visit.VisitDTO">
+    <insert id="createVisit" parameterType="com.savetrip.DTO.visit.VisitDTO"  useGeneratedKeys="true" keyProperty="visitNo" keyColumn="visit_no">
         INSERT INTO visit (
             user_no,
             ccode
@@ -25,4 +26,16 @@
             #{ccode}
         )
     </insert>
+
+    <select id="selectByVisitNo" parameterType="int" resultMap="visit">
+        SELECT *
+        FROM visit
+        WHERE visit_no = #{visitNo}
+    </select>
+
+    <select id="selectCountry"  resultType="com.savetrip.DTO.country.CountryDTO">
+       SELECT *
+       FROM country
+       WHERE ccode = #{ccode}
+    </select>
 </mapper>

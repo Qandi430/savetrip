@@ -1,5 +1,6 @@
 package com.savetrip.DTO.visit;
 
+import com.savetrip.DTO.country.CountryDTO;
 import lombok.Data;
 
 import java.sql.Date;
@@ -14,15 +15,8 @@ public class VisitDTO {
     private Date visitSDate;
     private Date visitEDate;
     private CoverDTO coverDTO;
+    private CountryDTO country;
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
-
-    public String getVisitSDate() {
-        return sdf.format(visitSDate);
-    }
-
-    public String getVisitEDate() {
-        return sdf.format(visitEDate);
-    }
 
 }

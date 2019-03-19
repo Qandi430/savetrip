@@ -9,4 +9,5 @@ import java.util.List;
 public interface VisitDAO {
     public List<VisitDTO> tripList(int userNo);
     public int createVisit(VisitDTO visitDTO);
+    public VisitDTO selectByVisitNo(int visitNo);
 }
