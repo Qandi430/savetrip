@@ -3,7 +3,7 @@
         <div class="sortBtn">
             <ul>
                 <li class="large on"><a href="#"><i class="far fa-square"></i></a></li>
-                <li class="quator"><a href="#"><i class="fas fa-th-large"></i></i></a></li>
+                <li class="quator"><a href="#"><i class="fas fa-th-large"></i></a></li>
                 <li class="list"><a href="#"><i class="fas fa-list-ul"></i></a></li>
                 <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
             </ul>
@@ -14,10 +14,17 @@
         <div class="cardWrap large">
             {{#each tripList}}
                 <div class="card" style="background-image: url(/images/creta.jpg);">
-                    <a href="#">
+                    <a href="/tripInfo?visitNo={{visitNo}}">
                         <div class="imgBox">
-                            <h5>{{visitTitle}}</h5>
-                            <p>{{visitSDate}}~{{visitEDate}}</p>
+                            {{#if visitTitle}}
+                                <h5>{{visitTitle}}</h5>
+                                {{else}}
+                                <h5>{{country.kor}}</h5>
+                            {{/if}}
+
+                            {{#if visitSDate}}
+                                <p>{{visitSDate}}~{{visitEDate}}</p>
+                            {{/if}}
                             <img src="/images/flags/{{ccode}}.png" alt="" class="img-responsive">
                         </div>
                         <div class="textBox">

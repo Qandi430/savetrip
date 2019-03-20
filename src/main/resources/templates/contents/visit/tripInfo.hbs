@@ -1,5 +1,5 @@
 <header>
-    <a href="main.html" class="back"><i class="fas fa-home"></i></a>
+    <a href="/" class="back"><i class="fas fa-home"></i></a>
     <a href="#" class="logo">
         SAVE <span>TRIP</span>
     </a>
@@ -13,10 +13,31 @@
             </div>
             <div class="inputBox">
                 <div class="titleBox">
-                    <a href="#" class="titleDummy" data-event="modal" data-target="#titleModal">여행제목</a>
-                    <input type="hidden" name="visit_title" id="visit_title">
-                    <a href="#" class="contentDummy" data-event="modal" data-target="#contentModal">여행에대한 간단한 메모를 입력해 주세요</a>
-                    <textarea name="visit_content" id="visit_content" cols="30" rows="10" style="display: none;"></textarea>
+                    <a href="#" class="titleDummy" data-event="modal" data-target="#titleModal">
+                        {{#if visit.visitTitle}}
+                            {{visit.visitTitle}}
+                        {{else}}
+                            여행제목
+                        {{/if}}
+                    </a>
+                    {{#if visit.visitTitle}}
+                        <input type="hidden" name="visit_title" id="visit_title" value="{{visit.visitTitle}}">
+                    {{else}}
+                        <input type="hidden" name="visit_title" id="visit_title" value="">
+                    {{/if}}
+                    <input type="hidden" name="visit_title" id="visit_title" value="">
+                    <a href="#" class="contentDummy" data-event="modal" data-target="#contentModal">
+                        {{#if visit.visitContent}}
+                            {{visit.visitContent}}
+                        {{else}}
+                            여행에대한 간단한 메모를 입력해 주세요
+                        {{/if}}
+                    </a>
+                    {{#if visit.visitCotent}}
+                        <textarea name="visit_content" id="visit_content" cols="30" rows="10" style="display: none;">{{visit.visitContent}}</textarea>
+                    {{else}}
+                        <textarea name="visit_content" id="visit_content" cols="30" rows="10" style="display: none;"></textarea>
+                    {{/if}}
                 </div>
                 <div class="countryBox">
                     <h3>여행 국가</h3>

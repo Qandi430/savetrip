@@ -16,6 +16,7 @@ public class VisitDTO {
     private Date visitEDate;
     private CoverDTO coverDTO;
     private CountryDTO country;
+    private String visitContent;
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
 

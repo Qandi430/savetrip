@@ -8,6 +8,7 @@
         <result column="visit_title" property="visitTitle" />
         <result column="visit_s_date" property="visitSDate"/>
         <result column="visit_e_date" property="visitEDate" />
+        <result column="visit_content" property="visitContent"/>
         <association property="country" column="ccode" javaType="com.savetrip.DTO.country.CountryDTO" select="selectCountry" />
     </resultMap>
 
