@@ -5,6 +5,7 @@
     </a>
 </header>
 <div id="wrap" class="info tripInfo">
+    <input type="hidden" neme="visitNo" id="visitNo" value="{{visit.visitNo}}">
     <div class="container">
         <form action="">
             <div class="bgBox" style="background-image:url(/images/vietnam.jpg);">
@@ -47,11 +48,11 @@
                     <h3>여행 날짜</h3>
                     <div class="start">
                         <label for="sDate">출발일</label>
-                        <input type="text" name="sDate" id="sDate" placeholder="시작일 입력하기">
+                        <input type="text" name="sDate" id="sDate" placeholder="시작일 입력하기" value="{{#if visit.visitContent}}{{visit.visitSDate}}{{/if}}">
                     </div>
                     <div class="end">
                         <label for="eDate">도착일</label>
-                        <input type="text" name="eDate" id="eDate" placeholder="종료일 입력하기">
+                        <input type="text" name="eDate" id="eDate" placeholder="종료일 입력하기" value="{{#if visit.visitContent}}{{visit.visitEDate}}{{/if}}">
                     </div>
                 </div>
                 <div class="budgetBox">
@@ -99,60 +100,8 @@
             </div>
         </div>
     </div>
-    <div id="selCountry">
-        <div class="container">
-            <div class="sellCountry">
-                <div class="searchBox">
-                    <form action="">
-                        <input type="text" name="search" id="search" placeholder="국가명 또는 국가 코드">
-                        <a href="#" class="cancle btn"><i class="fas fa-times"></i></a>
-                        <a href="#" class="cancle text">취소</a>
-                    </form>
-                </div>
-                <div class="selBox">
-                    <ul>
-                        <li>
-                            <div class="flagBox">
-                                <img src="img/flags/kr.png" alt=""class="img-responsive">
-                            </div>
-                            <h5>대한민국</h5>
-                            <div class="customBox">
-                                <div class="custom_btn one">
-                                    <div class="check"></div>
-                                </div>
-                            </div>
-                            <input type="radio" name="country" id="country" value="ko-kr">
-                        </li>
-                        <li>
-                            <div class="flagBox">
-                                <img src="img/flags/kr.png" alt=""class="img-responsive">
-                            </div>
-                            <h5>대한민국</h5>
-                            <div class="customBox">
-                                <div class="custom_btn one">
-                                    <div class="check"></div>
-                                </div>
-                            </div>
-                            <input type="radio" name="country" id="country" value="ko-kr">
-                        </li>
-                        <li>
-                            <div class="flagBox">
-                                <img src="img/flags/kr.png" alt=""class="img-responsive">
-                            </div>
-                            <h5>대한민국</h5>
-                            <div class="customBox">
-                                <div class="custom_btn one">
-                                    <div class="check"></div>
-                                </div>
-                            </div>
-                            <input type="radio" name="country" id="country" value="ko-kr">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <a href="tripInfo.html" class="selBtn">선택 완료</a>
-    </div>
+    {{>contents/etc/selCountry}}
+    <input type="hidden" name="ccode" id="ccode"/>
 </div>
 
 <script>
@@ -160,20 +109,47 @@
         if($("#title").val() != ""){
             $(".titleDummy").text($("#title").val());
             $("#visit_title").val($("#title").val());
+            $.ajax({
+                url:"/updateTitle",
+                data:"visitTitle="+$("#title").val()+"&visitNo="+$("#visitNo").val(),
+                type:"POST",
+                success:function (data) {
+                    console.log(data)
+                }
+            })
         }
         closeModal();
     });
     $("#contentModal .confirm").click(function(){
         if($("#content").val() != ""){
             $(".contentDummy").text($("#content").val());
+            $.ajax({
+                url:"/updateContent",
+                data:"visitContent="+$("#content").val()+"&visitNo="+$("#visitNo").val(),
+                type:"POST",
+                success:function (data) {
+                    console.log(data)
+                }
+            })
             $("#visit_content").val($("#content").val());
         }
         closeModal();
     });
+
     $('#eDate').bootstrapMaterialDatePicker({
         weekStart: 0,
         format: 'YYYY-MM-DD',
         time: false,
+    }).on("change",function (e, date) {
+        $('#sDate').bootstrapMaterialDatePicker('setMaxDate', date);
+        $.ajax({
+            url:"/updateEdate",
+            data:"visitEDate="+$('#eDate').val()+"&visitNo="+$("#visitNo").val(),
+            type:"POST",
+            success:function (data) {
+                console.log(data)
+            }
+        })
     });
     $('#sDate').bootstrapMaterialDatePicker({
         weekStart: 0,
@@ -182,12 +158,21 @@
         time: false,
     }).on('change', function(e, date){
         $('#eDate').bootstrapMaterialDatePicker('setMinDate', date);
+        $.ajax({
+            url:"/updateSdate",
+            data:"visitSDate="+$('#sDate').val()+"&visitNo="+$("#visitNo").val(),
+            type:"POST",
+            success:function (data) {
+                console.log(data)
+            }
+        })
     });
 
     $(".bgBox a").click(function(e){
         e.preventDefault();
         $("#cover").click();
-    })
+    });
+
     $(function() {
         $("#cover").on('change', function(){
             readURL(this);
@@ -204,4 +189,20 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    $("#selCountry .btnBox .selBtn").click(function(){
+        if($("intput[name='ccode']").val()==""){
+            alert("국가를 선택해주세요");
+            return;
+        }
+        $.ajax({
+            url:"/udateCcode",
+            data:"ccode="+$("#ccode").val()+"&visitNo="+$("#visitNo").val(),
+            type:"post",
+            success:function (data) {
+                console.log(data);
+            }
+        })
+    })
+
 </script>

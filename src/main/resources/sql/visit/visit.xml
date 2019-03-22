@@ -39,4 +39,34 @@
        FROM country
        WHERE ccode = #{ccode}
     </select>
+
+    <update id="updateTitle" parameterType="com.savetrip.DTO.visit.VisitDTO">
+        UPDATE visit
+        set visit_title = #{visitTitle}
+        WHERE visit_no = #{visitNo}
+    </update>
+
+    <update id="updateContent" parameterType="com.savetrip.DTO.visit.VisitDTO">
+        UPDATE visit
+        SET visit_content = #{visitContent}
+        WHERE visit_no = #{visitNo}
+    </update>
+
+    <update id="updateSdate" parameterType="com.savetrip.DTO.visit.VisitDTO">
+        UPDATE visit
+        SET visit_s_date = STR_TO_DATE(#{visitSDate},'YYYY-MM-DD')
+        WHERE visit_no = #{visitNo}
+    </update>
+
+    <update id="updateEdate" parameterType="com.savetrip.DTO.visit.VisitDTO">
+        UPDATE visit
+        SET visit_e_date = STR_TO_DATE(#{visitEDate},'YYYY-MM-DD')
+        WHERE visit_no = #{visitNo}
+    </update>
+
+    <update id="updateCcode" parameterType="com.savetrip.DTO.visit.VisitDTO">
+        UPDATE visit
+        SET ccode = #{ccode}
+        WHERE visit_no = #{visitNo}
+    </update>
 </mapper>

@@ -7,7 +7,12 @@ import java.util.List;
 
 @Mapper
 public interface VisitDAO {
-    public List<VisitDTO> tripList(int userNo);
-    public int createVisit(VisitDTO visitDTO);
-    public VisitDTO selectByVisitNo(int visitNo);
+    List<VisitDTO> tripList(int userNo);
+    int createVisit(VisitDTO visitDTO);
+    VisitDTO selectByVisitNo(int visitNo);
+    int updateTitle(VisitDTO visitDTO);
+    int updateContent(VisitDTO visitDTO);
+    int updateSdate(VisitDTO visitDTO);
+    int updateEdate(VisitDTO visitDTO);
+    int updateCcode(VisitDTO visitDTO);
 }
