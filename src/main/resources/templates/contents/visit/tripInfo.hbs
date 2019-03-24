@@ -64,7 +64,7 @@
             </div>
         </form>
     </div>
-    <a href="#" class="delTrip">여행 삭제하기</a>
+    <a href="/deleteVisit?visitNo={{visit.visitNo}}" class="delTrip">여행 삭제하기</a>
     <nav class="infoNav">
         <ul>
             <li class="on tripInfo"><a href="#"><i class="fas fa-plane"></i></a></li>
@@ -196,11 +196,16 @@
             return;
         }
         $.ajax({
-            url:"/udateCcode",
+            url:"/updateCcode",
             data:"ccode="+$("#ccode").val()+"&visitNo="+$("#visitNo").val(),
             type:"post",
             success:function (data) {
-                console.log(data);
+                if(data == 1){
+                    console.log($(".selBox ul li.on img").attr("href"))
+                    $(".countryBox >a >span").text($(".selBox ul li.on h5").text())
+                    $(".countryBox >a >img").attr("src",$(".selBox ul li.on .flagBox img").attr("src"));
+                    $("#selCountry").removeClass("on");
+                }
             }
         })
     })

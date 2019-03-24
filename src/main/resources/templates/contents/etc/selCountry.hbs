@@ -34,7 +34,7 @@
             success:function (data) {
                 for(let d of data){
                     html += `
-                        <li data-ccode="${d.ccode}" onclick="selList()">
+                        <li data-ccode="${d.ccode}">
                         <div class="flagBox">
                             <img src="/images/flags/${d.ccode}.png" onerror="this.src='/images/flags/noImageFlag.gif';" alt=""class="img-responsive">
                         </div>

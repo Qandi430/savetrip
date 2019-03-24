@@ -28,8 +28,6 @@ public class VisitController {
         visit.setUserNo(Integer.parseInt(request.getParameter("userNo")));
         visit.setCcode(request.getParameter("ccode"));
         visitService.createVisit(visit);
-        //model.addAttribute("visit",visitService.selectByVisitNo(visit.getVisitNo()));
-        //return "layout/visit/tripInfo";
         response.sendRedirect("/tripInfo?visitNo="+visit.getVisitNo());
     }
 
@@ -47,7 +45,10 @@ public class VisitController {
 
     @RequestMapping("/updateContent")
     @ResponseBody
-    public int updateContent(VisitDTO visitDTO){return visitService.updateContent(visitDTO);}
+    public int updateContent(VisitDTO visitDTO){
+        System.out.println(visitDTO.toString());
+        return visitService.updateContent(visitDTO);
+    }
 
     @RequestMapping("/updateSdate")
     @ResponseBody
@@ -61,4 +62,9 @@ public class VisitController {
     @ResponseBody
     public int updateCcode(VisitDTO visitDTO){return visitService.updateCcode(visitDTO);}
 
+    @RequestMapping("/deleteVisit")
+    public void deleteVisit(int visitNo,HttpServletResponse response) throws IOException {
+        visitService.deleteVisit(visitNo);
+        response.sendRedirect("/");
+    }
 }

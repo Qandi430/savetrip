@@ -15,4 +15,5 @@ public interface VisitDAO {
     int updateSdate(VisitDTO visitDTO);
     int updateEdate(VisitDTO visitDTO);
     int updateCcode(VisitDTO visitDTO);
+    int deleteVisit(int visitNo);
 }

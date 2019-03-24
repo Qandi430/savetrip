@@ -16,6 +16,7 @@
           SELECT *
           FROM visit
           WHERE user_no = #{userNo}
+          ORDER BY visit_no DESC
     </select>
 
     <insert id="createVisit" parameterType="com.savetrip.DTO.visit.VisitDTO"  useGeneratedKeys="true" keyProperty="visitNo" keyColumn="visit_no">
@@ -54,13 +55,13 @@
 
     <update id="updateSdate" parameterType="com.savetrip.DTO.visit.VisitDTO">
         UPDATE visit
-        SET visit_s_date = STR_TO_DATE(#{visitSDate},'YYYY-MM-DD')
+        SET visit_s_date = #{visitSDate}
         WHERE visit_no = #{visitNo}
     </update>
 
     <update id="updateEdate" parameterType="com.savetrip.DTO.visit.VisitDTO">
         UPDATE visit
-        SET visit_e_date = STR_TO_DATE(#{visitEDate},'YYYY-MM-DD')
+        SET visit_e_date = #{visitEDate}
         WHERE visit_no = #{visitNo}
     </update>
 
@@ -69,4 +70,9 @@
         SET ccode = #{ccode}
         WHERE visit_no = #{visitNo}
     </update>
+
+    <delete id="deleteVisit" parameterType="int">
+        DELETE FROM visit
+        WHERE visit_no = #{visitNo}
+    </delete>
 </mapper>

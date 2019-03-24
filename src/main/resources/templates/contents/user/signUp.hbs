@@ -23,13 +23,13 @@
             <path d="M40,105 C10,140 110,140 80,105 L80,105 L70,111 L60,105 L50,111 L40,105" fill="#fff" />
         </svg>
         <div class="formBox">
-            <form action="#" method="POST" id="signUpForm">
-                <div class="form-group email-group disabled">
-                    <input type="text" name="email" id="email" placeholder="이메일을 입력해주세요">
+            <form action="#" method="POST" id="signUpForm" name="user">
+                <div class="form-group email-group">
+                    <input type="text" name="userEmail" id="email" placeholder="이메일을 입력해주세요">
                     <p class="emailAlert"></p>
                 </div>
                 <div class="form-group password-group disabled">
-                    <input type="password" name="password" id="password" placeholder="비밀번호를 입력해주세요">
+                    <input type="password" name="userPassword" id="password" placeholder="비밀번호를 입력해주세요">
                     <p class="passwordAlert"></p>
                 </div>
                 <div class="form-group passwordConfirm-group disabled">
@@ -37,14 +37,14 @@
                     <p class="passwordConfirmAlert"></p>
                 </div>
                 <div class="form-group name-group disabled">
-                    <input type="text" name="name" id="name" placeholder="사용하실 이름 또는 닉네임을 입력해주세요">
+                    <input type="text" name="userName" id="name" placeholder="사용하실 이름 또는 닉네임을 입력해주세요">
                     <p class="nameAlert"></p>
                 </div>
                 <div class="form-group gender-group">
                     <div class="genderM on" style="float: left;">남자</div>
                     <div class="genderF" style="float: right;">여자</div>
-                    <input type="radio" name="gender" id="genderM" value="M" checked>
-                    <input type="radio" name="gender" id="genderF" value="F">
+                    <input type="radio" name="userGender" id="genderM" value="M" checked>
+                    <input type="radio" name="userGender" id="genderF" value="F">
                 </div>
             </form>
         </div>
@@ -97,31 +97,31 @@
         emailList.push("{{this}}");
     {{/each}}
 
-    $("#email").blur(function(e){
-        if($("#email").val()==""){
-            $(".emailAlert").css({"color":"red"})
-            $(".emailAlert").text("이메일을 입력해 주세요");
-            return;
-        }
-        if(emailRule.test($("#email").val())){
-            for(let i = 0; i<emailList.length; i++){
-                if($("#email").val() == emailList[i]){
-                    $(".emailAlert").css({"color":"red"})
-                    $(".emailAlert").text("이미 가입된 이메일 입니다.")
-                    return;
-                }else{
-                    $(".emailAlert").css({"color":"green"})
-                    $(".emailAlert").text("가입 가능한 이메일 입니다.")
-                    $(".email-group").removeClass("disabled");
-                    return;
-                }
-            }
-        }else{
-            $(".emailAlert").css({"color":"red"})
-            $(".emailAlert").text("이메일 형식이 아닙니다")
-            return false;
-        }
-    })
+    // $("#email").blur(function(e){
+    //     if($("#email").val()==""){
+    //         $(".emailAlert").css({"color":"red"})
+    //         $(".emailAlert").text("이메일을 입력해 주세요");
+    //         return;
+    //     }
+    //     if(emailRule.test($("#email").val())){
+    //         for(let i = 0; i<emailList.length; i++){
+    //             if($("#email").val() == emailList[i]){
+    //                 $(".emailAlert").css({"color":"red"})
+    //                 $(".emailAlert").text("이미 가입된 이메일 입니다.")
+    //                 return;
+    //             }else{
+    //                 $(".emailAlert").css({"color":"green"})
+    //                 $(".emailAlert").text("가입 가능한 이메일 입니다.")
+    //                 $(".email-group").removeClass("disabled");
+    //                 return;
+    //             }
+    //         }
+    //     }else{
+    //         $(".emailAlert").css({"color":"red"})
+    //         $(".emailAlert").text("이메일 형식이 아닙니다")
+    //         return false;
+    //     }
+    // })
 
     $("#password").blur(function(e){
         if($("#password").val()==""){

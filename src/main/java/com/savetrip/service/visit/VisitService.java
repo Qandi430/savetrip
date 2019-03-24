@@ -20,5 +20,6 @@ public class VisitService {
     public int updateContent(VisitDTO visitDTO){return visitDAO.updateContent(visitDTO);}
     public int updateSdate(VisitDTO visitDTO){return visitDAO.updateSdate(visitDTO);}
     public int updateEdate(VisitDTO visitDTO){return visitDAO.updateEdate(visitDTO);}
-    public int updateCcode(VisitDTO visitDTO){return visitDAO.updateEdate(visitDTO);}
+    public int updateCcode(VisitDTO visitDTO){return visitDAO.updateCcode(visitDTO);}
+    public int deleteVisit(int visitNo){return visitDAO.deleteVisit(visitNo);}
 }
